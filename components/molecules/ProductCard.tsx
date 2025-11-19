@@ -27,7 +27,7 @@ export default function ProductCard({
         width={264}
         height={240}
         alt="product"
-        className=""
+        className="w-full object-cover"
       />
       <div className="flex items-center justify-between p-3">
         <div className="">
