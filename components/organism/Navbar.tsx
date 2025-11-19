@@ -17,13 +17,14 @@ import Link from "next/link";
 import Image from "next/image";
 
 interface NavbarProps {
-  group: "Home" | "Menu";
+  group: "Home" | "Menu" | "Account";
 }
 
 export default function Navbar({ group }: NavbarProps) {
   const bgClass = {
     Home: "bg-gray-9",
     Menu: "bg-white",
+    Account: "bg-white",
   };
 
   const hoverColor =
