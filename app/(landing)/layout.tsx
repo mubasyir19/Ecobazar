@@ -23,7 +23,7 @@ export default function HomeLayout({
   return (
     <html lang="en">
       <body className={`${poppins.className} antialiased`}>
-        <Navbar />
+        <Navbar group="Home" />
         {children}
         <Footer />
       </body>

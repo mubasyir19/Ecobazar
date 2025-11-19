@@ -6,7 +6,6 @@ import {
   PhoneCall,
   Search,
 } from "lucide-react";
-import React from "react";
 import {
   Select,
   SelectContent,
@@ -17,7 +16,19 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 
-export default function Navbar() {
+interface NavbarProps {
+  group: "Home" | "Menu";
+}
+
+export default function Navbar({ group }: NavbarProps) {
+  const bgClass = {
+    Home: "bg-gray-9",
+    Menu: "bg-white",
+  };
+
+  const hoverColor =
+    group === "Home" ? "group-hover:text-white" : "group-hover:text-primary";
+
   return (
     <nav className="">
       <div className="border-gray-1 border-b py-2">
@@ -107,44 +118,68 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-      <div className="bg-gray-8 w-full py-4">
+      <div className={`border-gray-1 w-full border ${bgClass[group]} py-4`}>
         <div className="mx-auto flex max-w-[1440px] items-center justify-between">
           <ul className="flex items-center gap-8">
             <li className="group flex cursor-pointer items-center gap-1">
-              <span className="text-gray-4 text-small font-medium transition-all duration-150 group-hover:text-white">
+              <span
+                className={`text-gray-4 text-small font-medium transition-all duration-150 ${hoverColor}`}
+              >
                 Home
               </span>
-              <ChevronDown className="text-gray-4 size-4 transition-all duration-150 group-hover:text-white" />
+              <ChevronDown
+                className={`text-gray-4 size-4 transition-all duration-150 ${hoverColor}`}
+              />
             </li>
             <li className="group flex cursor-pointer items-center gap-1">
-              <span className="text-gray-4 text-small font-medium transition-all duration-150 group-hover:text-white">
+              <span
+                className={`text-gray-4 text-small font-medium transition-all duration-150 ${hoverColor}`}
+              >
                 Shop
               </span>
-              <ChevronDown className="text-gray-4 size-4 transition-all duration-150 group-hover:text-white" />
+              <ChevronDown
+                className={`text-gray-4 size-4 transition-all duration-150 ${hoverColor}`}
+              />
             </li>
             <li className="group flex cursor-pointer items-center gap-1">
-              <span className="text-gray-4 text-small font-medium transition-all duration-150 group-hover:text-white">
+              <span
+                className={`text-gray-4 text-small font-medium transition-all duration-150 ${hoverColor}`}
+              >
                 Pages
               </span>
-              <ChevronDown className="text-gray-4 size-4 transition-all duration-150 group-hover:text-white" />
+              <ChevronDown
+                className={`text-gray-4 size-4 transition-all duration-150 ${hoverColor}`}
+              />
             </li>
             <li className="group flex cursor-pointer items-center gap-1">
-              <span className="text-gray-4 text-small font-medium transition-all duration-150 group-hover:text-white">
+              <span
+                className={`text-gray-4 text-small font-medium transition-all duration-150 ${hoverColor}`}
+              >
                 Blog
               </span>
-              <ChevronDown className="text-gray-4 size-4 transition-all duration-150 group-hover:text-white" />
+              <ChevronDown
+                className={`text-gray-4 size-4 transition-all duration-150 ${hoverColor}`}
+              />
             </li>
             <li className="group flex cursor-pointer items-center gap-1">
-              <span className="text-gray-4 text-small font-medium transition-all duration-150 group-hover:text-white">
+              <span
+                className={`text-gray-4 text-small font-medium transition-all duration-150 ${hoverColor}`}
+              >
                 About Us
               </span>
-              <ChevronDown className="text-gray-4 size-4 transition-all duration-150 group-hover:text-white" />
+              <ChevronDown
+                className={`text-gray-4 size-4 transition-all duration-150 ${hoverColor}`}
+              />
             </li>
             <li className="group flex cursor-pointer items-center gap-1">
-              <span className="text-gray-4 text-small font-medium transition-all duration-150 group-hover:text-white">
+              <span
+                className={`text-gray-4 text-small font-medium transition-all duration-150 ${hoverColor}`}
+              >
                 Contact Us
               </span>
-              <ChevronDown className="text-gray-4 size-4 transition-all duration-150 group-hover:text-white" />
+              <ChevronDown
+                className={`text-gray-4 size-4 transition-all duration-150 ${hoverColor}`}
+              />
             </li>
           </ul>
           <div className="flex items-center gap-2">
