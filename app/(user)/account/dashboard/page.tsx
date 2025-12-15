@@ -1,5 +1,7 @@
 "use client";
 
+import MainDash from "@/components/organism/Dashboard/MainDash";
+import { Item } from "@radix-ui/react-select";
 import {
   Handbag,
   Heart,
@@ -44,7 +46,30 @@ const tabs = [
 ];
 
 export default function DashboardPage() {
-  const [activeTab, setActiveTab] = useState("");
+  const [activeTab, setActiveTab] = useState("dashboard");
+
+  const handleClickTab = (name: string) => {
+    setActiveTab(name);
+  };
+
+  const renderContentTab = () => {
+    switch (activeTab) {
+      case "dashboard":
+        return <MainDash />;
+      case "orderHistory":
+        return <></>;
+      case "wishlist":
+        return <></>;
+      case "shoppingCart":
+        return <></>;
+      case "settings":
+        return <></>;
+      case "logout":
+        return <></>;
+      default:
+        return <></>;
+    }
+  };
 
   return (
     <div className="mx-auto max-w-[1440px]">
@@ -58,12 +83,21 @@ export default function DashboardPage() {
             return (
               <div
                 key={i}
-                className={`flex items-center gap-2.5 border-l px-2.5 py-4`}
-              ></div>
+                className={`group hover:bg-green-gray-05 hover:border-primary flex items-center gap-2.5 border-l-2 px-4 py-4 transition-all duration-300 ${activeTab === tab.name ? "border-primary bg-green-gray-05" : "border-transparent"}`}
+              >
+                <Icon
+                  className={`group-hover:text-gray-9 size-5 transition-all duration-300 group-hover:font-medium ${activeTab === tab.name ? "text-gray-9 font-medium" : "text-gray-6"}`}
+                />
+                <p
+                  className={`text-medium group-hover:text-gray-9 transition-all duration-300 group-hover:font-medium ${activeTab === tab.name ? "text-gray-9 font-medium" : "text-gray-6"}`}
+                >
+                  {tab.label}
+                </p>
+              </div>
             );
           })}
         </div>
-        <div className="flex-1 bg-emerald-300"></div>
+        <div className="flex-1">{renderContentTab()}</div>
       </div>
     </div>
   );

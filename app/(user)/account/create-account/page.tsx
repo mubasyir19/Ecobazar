@@ -100,7 +100,7 @@ export default function RegisterAccountPage() {
           <div className="mt-5">
             <p className="text-gray-6 text-small text-center">
               Already have account?{" "}
-              <Link href={`#`} className="text-gray-9 font-medium">
+              <Link href={`/account/login`} className="text-gray-9 font-medium">
                 Login
               </Link>
             </p>

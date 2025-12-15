@@ -99,7 +99,10 @@ export default function SignInPage() {
           <div className="mt-5">
             <p className="text-gray-6 text-small text-center">
               Don&apos;t have account?{" "}
-              <Link href={`#`} className="text-gray-9 font-medium">
+              <Link
+                href={`/account/create-account`}
+                className="text-gray-9 font-medium"
+              >
                 Register
               </Link>
             </p>
