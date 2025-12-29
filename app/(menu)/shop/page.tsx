@@ -1,5 +1,6 @@
 "use client";
 
+import AppBreadcrumb from "@/components/molecules/AppBreadCrumb";
 import ProductCard from "@/components/molecules/ProductCard";
 import Subscribe from "@/components/molecules/Subscribe";
 import {
@@ -19,56 +20,13 @@ import {
 } from "@/components/ui/select";
 import { dummyProducts } from "@/helpers/dataCategory";
 import { useBreadcrumb } from "@/hooks/Breadcrumb/useBreadcrumb";
-import { House } from "lucide-react";
-import Link from "next/link";
-import React from "react";
 
 export default function ShopPage() {
   const breadcrumbItems = useBreadcrumb();
 
   return (
     <div>
-      <div className="bg-[url('/images/breadcrumbs.webp')] bg-cover bg-center">
-        <Breadcrumb className="mx-auto max-w-[1440px] py-8">
-          <BreadcrumbList>
-            <BreadcrumbLink asChild>
-              <Link href={`/`}>
-                <House className="text-gray-6 size-5" />
-              </Link>
-            </BreadcrumbLink>
-            {breadcrumbItems.map((item, i) => {
-              const isLast = i === breadcrumbItems.length - 1;
-
-              return (
-                <React.Fragment key={i}>
-                  {/* Separator */}
-                  <BreadcrumbSeparator className="mx-0.5 text-gray-400" />
-
-                  {/* Breadcrumb Item */}
-                  <BreadcrumbItem>
-                    {isLast ? (
-                      // Last item → green
-                      <BreadcrumbPage className="text-primary font-medium">
-                        {item.label}
-                      </BreadcrumbPage>
-                    ) : (
-                      // Middle / initial → gray and link
-                      <BreadcrumbLink asChild>
-                        <a
-                          href={item.href}
-                          className="hover:text-gray-7 text-gray-6"
-                        >
-                          {item.label}
-                        </a>
-                      </BreadcrumbLink>
-                    )}
-                  </BreadcrumbItem>
-                </React.Fragment>
-              );
-            })}
-          </BreadcrumbList>
-        </Breadcrumb>
-      </div>
+      <AppBreadcrumb items={breadcrumbItems} />
       <div className="mx-auto max-w-[1440px]">
         <div className="flex items-center justify-between py-6">
           <div className="flex items-center gap-4">

@@ -1,5 +1,6 @@
 "use client";
 
+import AppBreadcrumb from "@/components/molecules/AppBreadCrumb";
 import Subscribe from "@/components/molecules/Subscribe";
 import {
   Breadcrumb,
@@ -22,47 +23,7 @@ export default function RegisterAccountPage() {
 
   return (
     <div className="">
-      <div className="bg-[url('/images/breadcrumbs.webp')] bg-cover bg-center">
-        <Breadcrumb className="mx-auto max-w-[1440px] py-8">
-          <BreadcrumbList>
-            <BreadcrumbLink asChild>
-              <Link href={`/`}>
-                <House className="text-gray-6 size-5" />
-              </Link>
-            </BreadcrumbLink>
-            {breadcrumbItems.map((item, i) => {
-              const isLast = i === breadcrumbItems.length - 1;
-
-              return (
-                <React.Fragment key={i}>
-                  {/* Separator */}
-                  <BreadcrumbSeparator className="mx-0.5 text-gray-400" />
-
-                  {/* Breadcrumb Item */}
-                  <BreadcrumbItem>
-                    {isLast ? (
-                      // Last item → green
-                      <BreadcrumbPage className="text-primary font-medium">
-                        {item.label}
-                      </BreadcrumbPage>
-                    ) : (
-                      // Middle / initial → gray and link
-                      <BreadcrumbLink asChild>
-                        <a
-                          href={item.href}
-                          className="hover:text-gray-7 text-gray-6"
-                        >
-                          {item.label}
-                        </a>
-                      </BreadcrumbLink>
-                    )}
-                  </BreadcrumbItem>
-                </React.Fragment>
-              );
-            })}
-          </BreadcrumbList>
-        </Breadcrumb>
-      </div>
+      <AppBreadcrumb items={breadcrumbItems} />
       <div className="flex items-center justify-center py-20">
         <div className="w-1/4 rounded-xl bg-white p-6 shadow-lg">
           <h5 className="text-heading-5 text-center font-semibold text-gray-900">
