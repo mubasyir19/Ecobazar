@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 interface CategoryCardProps {
@@ -14,8 +17,14 @@ export default function CategoryCard({
   slug,
   imageLink,
 }: CategoryCardProps) {
+  const router = useRouter();
+
   return (
-    <div className="border-gray-1 group hover:border-primary hover:shadow-hard-primary cursor-pointer rounded-md border bg-white pt-4 pb-6 transition-all duration-200 hover:shadow-lg">
+    <div
+      id={id}
+      onClick={() => router.push(`/categories/${slug}`)}
+      className="border-gray-1 group hover:border-primary hover:shadow-hard-primary cursor-pointer rounded-md border bg-white pt-4 pb-6 transition-all duration-200 hover:shadow-lg"
+    >
       <Image
         src={`${imageLink}`}
         width={190}
