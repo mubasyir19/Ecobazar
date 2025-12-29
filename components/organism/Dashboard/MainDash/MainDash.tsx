@@ -1,7 +1,12 @@
 import Link from "next/link";
 import React from "react";
+import { DataTable } from "./data-table";
+import { columns } from "./columns";
+import { dataOrder } from "@/helpers/dataOrder";
 
 export default function MainDash() {
+  const overviewOrder = dataOrder.slice(0, 6);
+
   return (
     <div className="">
       <section className="flex w-full flex-row gap-6">
@@ -56,7 +61,9 @@ export default function MainDash() {
             </Link>
           </div>
         </div>
-        <div className=""></div>
+        <div className="">
+          <DataTable columns={columns} data={overviewOrder} />
+        </div>
       </section>
     </div>
   );
