@@ -70,7 +70,8 @@ export default function Navbar({ group }: NavbarProps) {
             <div className="text-gray-6 text-large">|</div>
             <div>
               <p className="text-tiny text-gray-6 flex items-center gap-1">
-                <Link href={`#`}>Sign In</Link> /<Link href={`#`}>Sign Up</Link>
+                <Link href={`/account/login`}>Sign In</Link> /
+                <Link href={`/account/create-account`}>Sign Up</Link>
               </p>
             </div>
           </div>
