@@ -3,6 +3,7 @@
 import AppBreadcrumb from "@/components/molecules/AppBreadCrumb";
 import MainDash from "@/components/organism/Dashboard/MainDash/MainDash";
 import OrderHistory from "@/components/organism/Dashboard/OrderHistory/OrderHistory";
+import SettingDash from "@/components/organism/Dashboard/Settings/Setting";
 import { useBreadcrumb } from "@/hooks/Breadcrumb/useBreadcrumb";
 import {
   Handbag,
@@ -66,7 +67,7 @@ export default function DashboardPage() {
       case "shoppingCart":
         return <></>;
       case "settings":
-        return <></>;
+        return <SettingDash />;
       case "logout":
         return <></>;
       default:

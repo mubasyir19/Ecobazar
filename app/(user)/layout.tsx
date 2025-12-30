@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "../globals.css";
 import Navbar from "@/components/organism/Navbar";
 import Footer from "@/components/organism/Footer";
+import Subscribe from "@/components/molecules/Subscribe";
 
 const poppins = Poppins({
   weight: ["200", "300", "400", "500", "600", "700", "800"],
@@ -25,6 +26,7 @@ export default function UserLayout({
       <body className={`${poppins.className} antialiased`}>
         <Navbar group="Account" />
         {children}
+        <Subscribe />
         <Footer />
       </body>
     </html>
