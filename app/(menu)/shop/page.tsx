@@ -109,6 +109,9 @@ export default function ShopPage() {
               imageLink={item.imageProduct}
               name={item.name}
               price={item.price}
+              description={item.description}
+              skuCode={item.sku_code}
+              categoryProduct={item.category.name}
             />
           ))}
         </div>

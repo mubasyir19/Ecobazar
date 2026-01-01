@@ -175,6 +175,9 @@ export default function Home() {
                 imageLink={product.imageProduct}
                 name={product.name}
                 price={product.price}
+                description={product.description}
+                skuCode={product.sku_code}
+                categoryProduct={product.category.name}
               />
             ))}
           </div>
@@ -294,6 +297,9 @@ export default function Home() {
                 imageLink={product.imageProduct}
                 name={product.name}
                 price={product.price}
+                description={product.description}
+                skuCode={product.sku_code}
+                categoryProduct={product.category.name}
               />
             ))}
             {dummyProducts.slice(0, 2).map((product, i) => (
@@ -302,6 +308,9 @@ export default function Home() {
                 imageLink={product.imageProduct}
                 name={product.name}
                 price={product.price}
+                description={product.description}
+                skuCode={product.sku_code}
+                categoryProduct={product.category.name}
               />
             ))}
           </div>
@@ -353,6 +362,9 @@ export default function Home() {
               imageLink={product.imageProduct}
               name={product.name}
               price={product.price}
+              description={product.description}
+              skuCode={product.sku_code}
+              categoryProduct={product.category.name}
             />
           ))}
         </div>
