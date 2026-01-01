@@ -1,22 +1,11 @@
 "use client";
 
 import AppBreadcrumb from "@/components/molecules/AppBreadCrumb";
-import Subscribe from "@/components/molecules/Subscribe";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { useBreadcrumb } from "@/hooks/Breadcrumb/useBreadcrumb";
-import { House } from "lucide-react";
 import Link from "next/link";
-import React from "react";
 
 export default function RegisterAccountPage() {
   const breadcrumbItems = useBreadcrumb();
