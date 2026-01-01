@@ -68,7 +68,6 @@ export default function RegisterAccountPage() {
           </div>
         </div>
       </div>
-      <Subscribe />
     </div>
   );
 }
